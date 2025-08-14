@@ -1,0 +1,70 @@
+:root{
+  --bg:#ffffff; --text:#0b1221; --muted:#5a6475; --accent:#2154ff; --card:#f6f8fb; --line:#e8ecf3;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#0b1221; --text:#eef2f8; --muted:#b6c0d4; --card:#121a2c; --line:#1e2a44; --accent:#82a0ff; }
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:var(--bg); color:var(--text); line-height:1.6;}
+h1,h2,h3{line-height:1.2;margin:0 0 .5rem}
+h1{font-size:clamp(2rem,3.5vw,3rem); font-weight:800}
+h2{font-size:clamp(1.4rem,2.4vw,2rem); margin-top:2rem}
+h3{font-size:1.1rem}
+p{margin:.5rem 0 1rem}
+a{color:var(--accent); text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:1040px; margin:0 auto; padding:0 16px}
+.accent{color:var(--accent)}
+.btn,.btn-ghost{display:inline-block; padding:.7rem 1rem; border-radius:10px; font-weight:600; text-decoration:none}
+.btn{background:var(--accent); color:white}
+.btn:hover{filter:brightness(.95)}
+.btn-secondary{background:transparent; color:var(--accent); border:2px solid var(--accent)}
+.btn-ghost{border:1px solid var(--line); color:var(--muted)}
+.site-header{border-bottom:1px solid var(--line)}
+.nav{display:flex; align-items:center; justify-content:space-between; padding:12px 0}
+.brand{font-weight:800; font-size:1.1rem; background:var(--text); color:var(--bg); border-radius:8px; padding:6px 10px}
+.nav-toggle{display:none; background:none; border:none; font-size:1.4rem; color:var(--text)}
+.nav-links{display:flex; gap:18px; list-style:none; margin:0; padding:0}
+.nav-links a{padding:8px 10px; border-radius:8px}
+.nav-links .btn{padding:8px 14px}
+
+.hero{display:grid; grid-template-columns: 1.3fr .7fr; gap:24px; padding:48px 0}
+.hero .lead{color:var(--muted); max-width:60ch}
+.hero-cta{display:flex; gap:12px; margin:12px 0 16px}
+.meta{list-style:none; padding:0; margin:0; display:flex; flex-wrap:wrap; gap:12px; color:var(--muted)}
+.hero-media img{width:100%; max-width:360px; height:auto; border-radius:16px; border:1px solid var(--line); background:var(--card)}
+
+.work{padding:28px 0}
+.work h2{margin-bottom:12px}
+.section-intro{color:var(--muted)}
+
+.card{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px; margin:16px 0; display:grid; gap:10px}
+.card-body .excerpt{color:var(--muted)}
+.tags{list-style:none; display:flex; gap:8px; padding:0; margin:8px 0 0}
+.tags li{font-size:.85rem; padding:4px 8px; border:1px solid var(--line); border-radius:999px; color:var(--muted)}
+.card-foot{display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--line); padding-top:10px; color:var(--muted); font-size:.9rem}
+
+.gallery{display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; margin-top:12px}
+.tile{background:var(--card); border:1px solid var(--line); border-radius:14px; overflow:hidden}
+.tile img{width:100%; display:block; aspect-ratio: 4 / 3; object-fit:cover; background:#ddd}
+.tile figcaption{padding:12px; display:flex; align-items:center; justify-content:space-between}
+.tile-actions .btn-ghost{padding:6px 10px; border-radius:8px}
+
+.about, .skills, .contact{padding:24px 0}
+.bullets{margin:.5rem 0 0; padding-left:18px}
+.skills .skill-grid{display:grid; grid-template-columns: repeat(2,1fr); gap:16px}
+.skill-box{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px}
+.contact .contact-list{list-style:none; padding:0; margin:.5rem 0 1rem}
+.site-footer{border-top:1px solid var(--line); margin-top:24px; padding:16px 0}
+.footer-inner{display:flex; align-items:center; justify-content:space-between}
+.social a{display:inline-flex; width:32px; height:32px; align-items:center; justify-content:center; border:1px solid var(--line); border-radius:8px; margin-left:6px}
+
+@media (max-width: 900px){
+  .hero{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr}
+  .skills .skill-grid{grid-template-columns:1fr}
+  .nav-toggle{display:block}
+  .nav-links{display:none; flex-direction:column; position:absolute; right:16px; top:60px; background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:8px}
+  .nav-links.show{display:flex}
+}
